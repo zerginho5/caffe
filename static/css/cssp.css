@@ -1,0 +1,75 @@
+
+#login{
+    
+    background-color: paleturquoise;
+    text-align: right;
+    margin-right:75px;
+    margin-left:75px;
+    border: 1px solid black;
+    margin-top: 1%;
+    padding-bottom: 1px;
+
+}
+
+
+                                        
+.datos{
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+.datos th,tr,td{
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+.datos th{
+    background-color: black;
+    font-weight: bold;
+    color: white;
+    font-size: 12;
+}
+.datos tr:hover{
+ background-color: lightgray;   
+}
+
+    #margin{
+        background-color: rgb(255, 249, 205);
+       
+        margin-left: 10%;
+        margin-right: 20%;
+        border: 2px solid black;
+        margin-top: 5%;
+        }
+        body {
+            overflow: hidden;
+            height: 100%;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            background: whitesmoke url("fondo.png") repeat-x 50% 50% / contain;
+        }
+
+        .color {
+            color: black;
+
+        }
+
+        .sub {
+            background-color: blue;
+            border: solid;
+            color: black;
+            border-radius: 4px;
+            padding: 10px;
+        }
+
+        .th1 {
+            background-color: blue;
+            color: black;
+        }
+        .imagen{
+    margin-top:15px;
+    text-align: right;
+    font-weight: bold;
+    font-size: 15px;
+}
