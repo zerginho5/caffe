@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="{{url_for('static', filename='css/css.css')}}">
+</head>
+<body>
+    <header>
+        <img src="{{url_for('static', filename='imagenes/id-card.png')}}" width="90" height="90">
+    </header>
+    <main>
+        <fieldset class="izq">
+            <legend>Ventas</legend>
+            <table>
+                <tr>
+                    <td>
+                        <a href="/Index" class="btnimg"><img src= "{{url_for('static', filename='imagenes/payment-method.png')}}"
+                                width="90" height="90"></a>
+                    </td>
+                    
+                </tr>
+                <tr>
+                    <td>
+                        <button><a href="/Index" class="linkbutton">Ventas</a></button>
+                    </td>
+                    
+                </tr>
+            </table>
+        </fieldset>
+        <fieldset class="der">
+            <legend>Inventario</legend>
+            <table>
+                <tr>
+                    <td>
+                        <a href="/Index" class="btnimg"><img src="{{url_for('static', filename='imagenes/stock.png')}}"
+                                width="90" height="90"></a>
+                    </td>
+                    <td>
+                        <a href="/Index" class="btnimg"><img src="{{url_for('static', filename='imagenes/invguard.png')}}"
+                                width="90" height="90"></a>
+                    </td>
+                    <td>
+                        <a href="/Index" class="btnimg"><img src="{{url_for('static', filename='imagenes/comida.jpg')}}"
+                                width="90" height="90"></a>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <button id="inv"><a href="/Index"
+                                class="linkbutton">Inventario</a></button>
+                    </td>
+                    <td>
+                        <button id="inv"><a href="/Index"
+                                class="linkbutton">Categorias</a></button>
+                    </td>
+                    <td>
+                        <button id="inv"><a href="/Index"
+                                class="linkbutton">Seccion</a></button>
+                    </td>
+                </tr>
+            </table>
+        </fieldset>
+        <fieldset class="izqa">
+            <legend>Cuentas de usuario</legend>
+            <table>
+                <tr>
+                    <td>
+                        <a href="/usuarios" class="btnimg"><img src="{{url_for('static', filename='imagenes/id-card.png')}}" width="90"
+                                height="90"></a>
+                    </td>
+                    
+                </tr>
+                <tr>
+                    <td>
+                        <button><a href="/usuarios" class="linkbutton">Cuentas</a></button>
+                    </td>
+                    
+                </tr>
+            </table>
+        </fieldset>
+        <fieldset class="dera">
+            <legend>Salir</legend>
+            <table>
+                <tr>
+                    <td>
+                        <a href="/Index" class="btnimg"><img src="{{url_for('static', filename='imagenes/exit.png')}}" width="90"
+                                height="90"></a>
+                    </td>
+
+                </tr>
+                <tr>
+                    <td>
+                        <button><a href="/Index" class="linkbutton">Cerrar sesion</a></button>
+                    </td>
+
+                </tr>
+            </table>
+        </fieldset>
+        
+    </main>
+</body>
+
+</html>

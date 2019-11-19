@@ -1,0 +1,52 @@
+{% extends "layout1.html" %}
+{% block body %}
+
+<div class="row">
+    <div class="col-md-5">
+        {% with messages = get_flashed_messages()  %}
+        {% if messages %}
+        {% for message in messages %}
+        <div class="alert alert-success alert-dismissible fade show" role="alert">
+            {{ message }}
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+        {% endfor %}
+        {% endif %}
+        {% endwith %}
+        <center>
+            <form action="{{url_for('inicio')}}" method="POST">
+                <table class="card card-body">
+                    <tr>
+                        <td>
+                            <label class="form-group">Nombre:</label>
+                        </td>
+                        <td>
+                            <div class="form-group">
+                                <input type="text" name="fullname" class="form-control" placeholder="" required>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label class="form-group">Contraseña:</label>
+                        </td>
+                        <td>
+                            <div class="form-group">
+                                <input type="password" name="password" class="form-control" placeholder="" required>
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+                <button type="submit" class="btn btn-primary btn-block">
+                    Entrar
+                </button>
+            </form>
+        </center>
+    </div>
+
+</div>
+</div>
+
+{% endblock %}

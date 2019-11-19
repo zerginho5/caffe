@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>CaffeMartha</title>
+  <link rel="stylesheet" href="https://bootswatch.com/4/materia/bootstrap.min.css">
+  <link rel="stylesheet" href="{{url_for('static', filename='css/main.css')}}">
+</head>
+
+<body>
+  <nav class="navbar navbar-dark bg-dark">
+    <a class="navbar-brand" href="/venta">Ventas</a>
+    <a class="navbar-brand" href="/punto">Vender</a>
+    <a class="navbar-brand" href="/producto">Productos</a>
+    <a class="navbar-brand" href="/usuarios">Usuarios</a>
+    <a class="navbar-brand" href="/seccion">Secciones</a>
+    <a class="navbar-brand" href="/categoria">Categorías</a>
+    <a class="navbar-brand" href="/">Cerrar sesión</a>
+  </nav>
+  <div class="container pt-4">
+    {% block body %}
+    {% endblock %}
+  </div>
+
+
+  <script src="{{url_for('static', filename='js/main.js')}}"></script>
+</body>
+
+</html>

@@ -1,0 +1,88 @@
+{% extends "layout.html" %}
+{% block body %}
+
+<div class="row">
+  <div class="col-md-5">
+    {% with messages = get_flashed_messages()  %}
+    {% if messages %}
+    {% for message in messages %}
+    <div class="alert alert-success alert-dismissible fade show" role="alert">
+      {{ message }}
+      <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    {% endfor %}
+    {% endif %}
+    {% endwith %}
+    <div class="card card-body">
+      <form action="{{url_for('add_prod')}}" method="POST">
+        <div class="form-group">
+          <input type="text" name="fullname" class="form-control" placeholder="Nombre" required>
+        </div>
+        <div class="form-group">
+          <input type="number" name="precio" class="form-control" step="0.1" min=0.1 placeholder="Precio" required>
+        </div>
+        <div class="form-group">
+          <input type="text" name="descripcion" class="form-control" placeholder="Descripcion" required>
+        </div>
+        <div class="form-group">
+          <input type="number" min=1 name="existencias" class="form-control" placeholder="Existencias" required>
+        </div>
+        <div class="form-group">
+            <select name="seccion" required class="form-control">
+                {%for se in sec%}
+                <option value="{{se.0}}">{{se.1}}(Seccion)</option>
+                {%endfor%}
+              </select>
+        </div>
+        <div class="form-group">
+            <select name="categoria" required class="form-control">
+                {%for ca in cat%}
+                <option value="{{ca.0}}">{{ca.1}}(Categoria)</option>
+                {%endfor%}
+            </select>
+        </div>
+        <button type="submit" class="btn btn-primary btn-block">
+          Guardar
+        </button>
+      </form>
+    </div>
+  </div>
+  <div class="col-md-7">
+    <table class="table table-striped table-hover table-bordered table-sm bg-white">
+      <thead>
+        <tr>
+          <td>ID</td>
+          <td>Nombre</td>
+          <td>Precio</td>
+          <td>Descripcion</td>
+          <td>Existencias</td>
+          <td>Seccion</td>
+          <td>Categoria</td>
+          <td>Operations</td>
+        </tr>
+      </thead>
+      <tbody>
+        {% for contact in contacts %}
+        <tr>
+          <td>{{contact.0}}</td>
+          <td>{{contact.1}}</td>
+          <td>{{contact.2}}</td>
+          <td>{{contact.3}}</td>
+          <td>{{contact.4}}</td>
+          <td>{{contact.5}}</td>
+          <td>{{contact.6}}</td>
+          <td>
+            <a href="/editprod/{{contact.0}}" class="btn btn-secondary">editar</a>
+            <a href="/deleteprod/{{contact.0}}" class="btn btn-danger btn-delete">borrar</a>
+          </td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+</div>
+</div>
+
+{% endblock %}
